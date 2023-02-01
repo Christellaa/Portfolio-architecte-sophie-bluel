@@ -1,9 +1,9 @@
 async function getAllWorks() {
-  try {
+    try {
       const res = await fetch("http://localhost:5678/api/works");
       if (res.ok) {
         const works = await res.json();
-        addWorksToDocument(works);
+        return works;
       }
     } catch (err) {
       console.error(err);
@@ -27,5 +27,8 @@ function addWorksToDocument(works) {
       gallery.appendChild(figure);
   });
 }
-
-getAllWorks();
+async function showWorks() {
+const allWorks = await getAllWorks();
+addWorksToDocument(allWorks);
+}
+showWorks();
