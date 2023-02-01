@@ -27,8 +27,10 @@ function addWorksToDocument(works) {
       gallery.appendChild(figure);
   });
 }
+
 async function showWorks() {
-const allWorks = await getAllWorks();
-addWorksToDocument(allWorks);
+  const allWorks = await getAllWorks();
+  addWorksToDocument(allWorks);
 }
+
 showWorks();
