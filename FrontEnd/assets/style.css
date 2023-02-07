@@ -122,16 +122,16 @@ li:hover {
 	margin-bottom: 0.5em;
 }
 
-#filters {
+#filtersContainer {
 	display: flex;
 	gap: 10px;
 	justify-content: center;
 }
-#filters li:first-child {
+.filterActive {
 	background-color: #1D6154;
 	color: #FFFFFF;
 }
-#filters li {
+.filters {
 	font-size: 16px;
 	font-weight: 700;
 	color: #1D6154;
