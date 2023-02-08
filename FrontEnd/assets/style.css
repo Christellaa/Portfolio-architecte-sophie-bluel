@@ -34,6 +34,9 @@ body {
 ol, ul {
 	list-style: none;
 }
+a:visited {
+	color: #000000;
+}
 blockquote, q {
 	quotes: none;
 }
@@ -48,10 +51,16 @@ table {
 }
 /** end reset css**/
 body {
-	max-width: 1140px;
-	margin:auto;
 	font-family: 'Work Sans' ;
 	font-size: 14px;
+	background-color: #FFFEF8;
+}
+.container {
+	max-width: 1140px;
+	margin: 0 auto;
+}
+.footerBottom {
+	height: 79vh;
 }
 header {
 	display: flex;
@@ -94,9 +103,17 @@ nav li {
 	padding: 0 10px;
 	font-size: 1.2em;
 }
-
+nav a {
+	text-decoration: none;
+}
+nav a:hover {
+	color: #B1663C;
+}
 li:hover {
 	color: #B1663C;
+}
+.currentLink {
+    font-weight: 600;
 }
 #introduction {
 	display: flex;
@@ -191,6 +208,28 @@ margin: auto;
 	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 }
 
+#logIn {
+	width: 50%;
+	margin: auto;
+	text-align: center;
+}
+#logIn form {
+	text-align: left;
+	margin-top:30px;
+	display: flex;
+	flex-direction: column;
+}
+#logIn input {
+	height: 50px;
+	font-size: 1.2em;
+	border: none;
+	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+}
+#logIn label {
+	margin: 2em 0 1em 0;
+}
+
+
 input[type="submit"]{
 	font-family: 'Syne';
 	font-weight: 700;
@@ -202,9 +241,13 @@ input[type="submit"]{
 	border-radius: 60px ;
 }
 
+footer {
+	background-color: #FFFFFF;
+}
+
 footer nav ul {
 	display: flex;
 	justify-content: flex-end;
-	margin: 2em
+	margin-right: 2em;
+	padding: 44px;
 }
-
