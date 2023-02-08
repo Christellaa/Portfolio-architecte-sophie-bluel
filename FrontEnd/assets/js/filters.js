@@ -15,62 +15,48 @@ async function getAllCategories() {
 }
 
 //création des catégories
-const addCategories = (categories) => {
-    categories.forEach((categories) => {
-        const filtersContainer = document.getElementById("filtersContainer");
-        
-        const filters = document.createElement("li");
-        filtersContainer.appendChild(filters);
+function addCategories(categories) {
+    const filtersContainer = document.getElementById("filtersContainer");
 
-        filters.innerText = categories.name;
-        filters.id = categories.id;
+    const filterAll = document.createElement("li");
+    filterAll.setAttribute("id", 0);
+    filterAll.innerHTML = "Tous";
+    filterAll.classList.add("filters", "filterActive");
+    filtersContainer.appendChild(filterAll);
+
+    categories.forEach(function(category) {
+        const filters = document.createElement("li");
+
+        filters.innerText = category.name;
+        filters.id = category.id;
         filters.classList.add("filters");
 
-        const filterAll = document.createElement("li")
-        filterAll.setAttribute("id", 0);
-        filterAll.setAttribute("name","Tous");
-        filterAll.classList.add("filters");
-        filtersContainer.appendChild(filterAll);
-        console.log(filterAll);
+        filtersContainer.appendChild(filters);
 
-        //const filtersContainerArray = [filtersContainer.childNodes];
-        const filtersContainerArray = [];
-        for (node = document.getElementById('filtersContainer').firstChild;
-        node;
-        node = node.nextSibling) {
-            if (node.nodeType == 1 && node.tagName == 'LI') {
-                filtersContainerArray.push(node.innerHTML);
-            }
-        }
-        console.log(filtersContainerArray);
-
-        filterActive(filters, filtersContainerArray);
-    })
+        filterActive(filters);
+    });
+    filterActive(filterAll);
 }
 
-function filterActive(element, container) {
-    //ajouter class au nouveau filtre actif
+//filtre actif
+function filterActive(element) {
     element.addEventListener("click", () => {
-        //container.forEach(element) 
-        console.log("a");
-        for (let i = 0; i < container.length; i++) 
-        {
-            console.log("b");
-            
-            document.querySelector(".filters .filterActive").classList.remove("filterActive");
-            element.classList.add("filterActive");
-            console.log("c");
-            //document.querySelector(".filterActive").classList.remove("filterActive");
+        let remover = document.getElementsByClassName("filterActive");
+        if (remover.length !== 0) {
+            Array.from(remover).forEach((element) => {
+            element.classList.remove("filterActive");
+            });
         }
+        element.classList.add("filterActive");
+        showWorks(element.id);
     });
 }
-
-
-getWorksArray();
-getAllCategories();
 
 async function showCategories() {
     const allCategories = await getAllCategories();
     addCategories(allCategories);
 }
+
+getWorksArray();
+getAllCategories();
 showCategories();
