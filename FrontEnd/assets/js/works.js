@@ -12,25 +12,39 @@ async function getAllWorks() {
 
 function addWorksToDocument(works) {
   works.forEach(function(work) {
-      const gallery = document.getElementById("gallery");
-      const figure = document.createElement("figure");
-      const img = document.createElement("img");
-      const caption = document.createElement("figcaption");
-
-      img.src = work.imageUrl;
-      caption.innerText = work.title;
-
-      img.setAttribute("alt", work.title);
-
-      figure.appendChild(img);
-      figure.appendChild(caption);
-      gallery.appendChild(figure);
+      addWork(work);
   });
 }
 
-async function showWorks() {
-  const allWorks = await getAllWorks();
-  addWorksToDocument(allWorks);
+function addWork(work) {
+  const gallery = document.getElementById("gallery");
+  const figure = document.createElement("figure");
+  const img = document.createElement("img");
+  const caption = document.createElement("figcaption");
+
+  img.src = work.imageUrl;
+  caption.innerText = work.title;
+
+  img.setAttribute("alt", work.title);
+  
+  figure.appendChild(img);
+  figure.appendChild(caption);
+  gallery.appendChild(figure);
 }
 
-showWorks();
+async function showWorks(categoryValue) {
+  const allWorks = await getAllWorks();
+  const gallery = document.getElementById("gallery");
+  gallery.innerHTML = "";
+  if(categoryValue == 0) {
+    addWorksToDocument(allWorks);
+  } else {
+    allWorks.forEach((work) => {
+      if(categoryValue == work.categoryId) {
+      addWork(work);
+      }
+    });
+  }
+}
+
+showWorks(0);
