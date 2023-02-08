@@ -127,10 +127,6 @@ li:hover {
 	gap: 10px;
 	justify-content: center;
 }
-.filterActive {
-	background-color: #1D6154;
-	color: #FFFFFF;
-}
 .filters {
 	font-size: 16px;
 	font-weight: 700;
@@ -140,6 +136,11 @@ li:hover {
 	padding: 10px 20px;
 	margin-top: 21px;
 	margin-bottom: 51px;
+	cursor: pointer;
+}
+.filterActive {
+	background-color: #1D6154;
+	color: #FFFFFF;
 }
 
 #portfolio h2 {
