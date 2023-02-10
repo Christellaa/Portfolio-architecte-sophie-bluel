@@ -25,28 +25,25 @@ function validateForm() {
     });
 }
 
-//const retrieveInput = {input: validateForm()};
-
 //send form to the API
-async function sendForm() {
+async function sendForm(email, password) {
+    console.log(email, password);
     await fetch("http://localhost:5678/api/users/login", {
         method: "POST",
         headers: {"Content-Type": "application/json"},
-        //body: validateForm()
-        //body: JSON.stringify(retrieveInput())
-        body: JSON.stringify({"mail": "sophie.bluel@test.tld", "password": "S0phie"})
+        body: JSON.stringify({"email": email, "password": password})
     })
-    /*.then((token) => token.json())
-    .then((LoggedIn) => {
+    /*.then((token) => token.json())*/
+    /*.then((LoggedIn) => {
         document.location.href = "http://127.0.0.1:5500/FrontEnd/index.html";
     })*/
 }
-sendForm();
+//sendForm(email.value, password.value);
 
 const button = document.getElementById("sendForm");
 button.addEventListener("click", (event) => {
-    console.log(email.value, password.value);
-    if(!email.value || !password.value) {
+    //console.log(email.value, password.value);
+    if((email.value == "") || (password.value == "")) {
         console.log("pas bon");
     } else {
         console.log("bon");
