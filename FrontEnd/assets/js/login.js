@@ -3,7 +3,7 @@ let email = document.getElementById("email");
 let password = document.getElementById("password");
 
 //validate Email and Password
-function validateForm() {
+function validateForm(email, password) {
     email.addEventListener("input", (event) => {
         if(!emailRegex.test(email.value)) {
             email.setCustomValidity("Veuillez mettre une adresse email valide.");
@@ -25,28 +25,35 @@ function validateForm() {
     });
 }
 
-//send form to the API
-async function sendForm(email, password) {
-    console.log(email, password);
-    await fetch("http://localhost:5678/api/users/login", {
-        method: "POST",
-        headers: {"Content-Type": "application/json"},
-        body: JSON.stringify({"email": email, "password": password})
-    })
-    /*.then((token) => token.json())*/
-    /*.then((LoggedIn) => {
-        document.location.href = "http://127.0.0.1:5500/FrontEnd/index.html";
-    })*/
-}
-//sendForm(email.value, password.value);
+let token = "";
 
+//function sending the form to the API
+async function sendForm(email, password) {
+    try {
+        const res = await fetch("http://localhost:5678/api/users/login", {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({"email": email, "password": password})
+        })
+        //get token
+        if (res.ok) {
+            const userToken = await res.json();
+            token = userToken.token;
+            window.location.href = "http://127.0.0.1:5500/FrontEnd/index.html";
+        }
+    } catch (err) {
+    console.error(err);
+  };
+}
+
+//send form to the API by clicking on the button
 const button = document.getElementById("sendForm");
 button.addEventListener("click", (event) => {
-    //console.log(email.value, password.value);
+    event.preventDefault();
     if((email.value == "") || (password.value == "")) {
-        console.log("pas bon");
+        console.log("mail ou mot de passe invalide");
     } else {
-        console.log("bon");
+        console.log("mail et mot de passe valides");
         sendForm(email.value, password.value);
     }
 })
