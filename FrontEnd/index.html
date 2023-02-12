@@ -9,6 +9,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap" rel="stylesheet">
 	<meta name="description" content="">
 	<link rel="stylesheet" href="./assets/style.css">
+	<script src="https://kit.fontawesome.com/ad56122445.js" crossorigin="anonymous"></script>
 </head>
 <body>
 	<div class="container">
@@ -36,7 +37,49 @@
 			</article>
 		</section>
 		<section id="portfolio">
-			<h2>Mes Projets</h2>
+			<div class="projects"><h2>Mes Projets</h2>
+				<div class="modifyWorks">
+					<i class="fa-regular fa-pen-to-square"></i>
+					<a href=".modale" class="modifyLink">modifier</a>
+				</div>
+			</div>
+			<aside>
+				<div class="modale" >
+					<i class="fa-solid fa-xmark"></i>
+					<h3>Galerie photo</h3>
+					<div id="galleryPhoto" class="gallerPhoto"></div>
+					<hr>
+					<div class="flexColumn">
+						<input type="button" name="addWork" id="addWork" value="Ajouter une photo">
+						<input type="button" name="deleteWork" id="deleteWork" value="Supprimer la galerie">
+					</div>
+				</div>
+				<div class="modalee">
+					<span class="icons">
+						<i class="fa-solid fa-arrow-left"></i>
+						<i class="fa-solid fa-xmark"></i>
+					</span>
+					<h3>Ajout photo</h3>
+					<form action="#" method="post">
+					<div class="addImgContainer">
+						<i class="fa-solid fa-image"></i>
+						<label for="addImg"><span>+ Ajouter photo</span>
+							<input type="file" name="addImg" id="addImg" accept=".png, .jpg">
+						</label>
+						<p>jpg, png: 4mo max</p>
+					</div>
+					<div class="info flexColumn">
+						<label for="titleImg">Titre</label>
+						<input type="text" name="titleImg" id="titleImg">
+						<label for="categoryOption">Catégorie</label>
+						<select id="categoryOption">
+						</select>
+					</div>
+					<hr>
+					<input type="submit" name="submitImg" id="submitImg" value="Valider">
+					</form>
+				</div>
+			</aside>
 			<ul id="filtersContainer">
 			</ul>
 			<div id="gallery" class="gallery">
