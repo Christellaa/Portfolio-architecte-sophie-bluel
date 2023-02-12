@@ -51,9 +51,8 @@ const button = document.getElementById("sendForm");
 button.addEventListener("click", (event) => {
     event.preventDefault();
     if((email.value == "") || (password.value == "")) {
-        console.log("mail ou mot de passe invalide");
+        alert("Adresse email ou mot de passe invalide");
     } else {
-        console.log("mail et mot de passe valides");
         sendForm(email.value, password.value);
     }
 })
