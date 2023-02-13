@@ -40,11 +40,11 @@
 			<div class="projects"><h2>Mes Projets</h2>
 				<div class="modifyWorks">
 					<i class="fa-regular fa-pen-to-square"></i>
-					<a href=".modale" class="modifyLink">modifier</a>
+					<a href="#openModal" class="modifyLink">modifier</a>
 				</div>
 			</div>
-			<aside>
-				<div class="modale" >
+			<aside id="openModal" class="modalWindow" aria-hidden="true" role="dialog">
+				<div class="modal">
 					<i class="fa-solid fa-xmark"></i>
 					<h3>Galerie photo</h3>
 					<div id="galleryPhoto" class="gallerPhoto"></div>
@@ -110,5 +110,6 @@
 <script src="./assets/js/currentPage.js"></script>
 <script src="./assets/js/works.js"></script>
 <script src="./assets/js/filters.js"></script>
+<script src="./assets/js/modal.js"></script>
 </body>
 </html>
