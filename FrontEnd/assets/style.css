@@ -224,8 +224,20 @@ li:hover {
 	margin-top: 60px;
 	margin-bottom: 46px;
 }
+.galleryContainer {
+	margin: 0 105px;
+	justify-content: center;
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	grid-column-gap: 7px;
+	grid-row-gap: 10px;
+}
+.galleryContainer img {
+	width: 100%;
+}
 hr {
 	width: 67%;
+	margin-top: 47px;
 }
 .flexColumn {
 	display: flex;
