@@ -80,17 +80,20 @@ function addWorksToModal(works) {
     const gallery = document.getElementById("galleryContainer");
     const figure = document.createElement("figure");
     const img = document.createElement("img");
+    const trashContainer = document.createElement("div");
     const trash = document.createElement("i");
     const caption = document.createElement("figcaption");
 
     img.src = work.imageUrl;
+    trashContainer.classList.add("trashContainer");
     trash.classList.add("fa-regular", "fa-trash-can");
     caption.innerText = "éditer";
   
     img.setAttribute("alt", work.title);
     
     figure.appendChild(img);
-    figure.appendChild(trash);
+    figure.appendChild(trashContainer);
+    trashContainer.appendChild(trash);
     figure.appendChild(caption);
     gallery.appendChild(figure);
     });
