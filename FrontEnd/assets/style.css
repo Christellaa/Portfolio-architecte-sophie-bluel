@@ -178,6 +178,7 @@ li:hover {
 	display: none;
 	position: fixed;
 	top: 0;
+	left: 0;
 	width: 100%;
 	height: 100%;
 	background: rgba(0, 0, 0, 0.3);
@@ -189,6 +190,9 @@ li:hover {
 	border-radius: 10px;
 	width: 630px;
 	position: relative;
+	max-width: calc(100vw - 100px);
+	max-height: calc(100vh - 100px);
+	overflow: auto;
 }
 .modalAddWork {
 	display: none;
@@ -229,6 +233,12 @@ li:hover {
 .galleryContainer figure {
 	position: relative;
 }
+.trashContainer {
+	z-index: 1;
+	position: absolute;
+	top: 6px;
+	right: 6px;
+}
 .fa-trash-can,
 .fa-arrows-up-down-left-right {
 	font-size: 10px;
@@ -237,10 +247,6 @@ li:hover {
 	padding: 3px;
 	line-height: normal;
 	border-radius: 2px;
-}
-.fa-trash-can {
-	position: absolute;
-	z-index: 1;
 }
 hr {
 	width: 67%;
