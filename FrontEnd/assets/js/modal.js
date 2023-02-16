@@ -66,3 +66,32 @@ window.addEventListener("keydown", function (e) {
         closeModal(e);
     }
 })
+
+//get all works from the API
+async function getWorksArray() {
+    const works = await getAllWorks();
+    addWorksToModal(works);
+    console.log(works);
+}
+
+//add all works to the DOM
+function addWorksToModal(works) {
+    works.forEach(function(work) {
+    const gallery = document.getElementById("galleryContainer");
+    const figure = document.createElement("figure");
+    const img = document.createElement("img");
+    const caption = document.createElement("figcaption");
+  
+    img.src = work.imageUrl;
+    caption.innerText = "éditer";
+  
+    img.setAttribute("alt", work.title);
+    
+    figure.appendChild(img);
+    figure.appendChild(caption);
+    gallery.appendChild(figure);
+    });
+    
+}
+
+getWorksArray();
