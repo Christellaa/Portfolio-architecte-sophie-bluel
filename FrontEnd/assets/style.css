@@ -139,10 +139,14 @@ li:hover {
 	margin-bottom: 0.5em;
 }
 
+.cursorPointer {
+	cursor: pointer;
+}
+
 .projects {
 	display: flex;
 	justify-content: center;
-	gap: 30px;
+	gap: 20px;
 	margin-bottom: 1em;
 }
 
@@ -155,6 +159,7 @@ li:hover {
 }
 .fa-pen-to-square {
 	font-size: 20px;
+	margin-right: 10px;
 }
 .modifyLink {
 	text-decoration: none;
@@ -165,7 +170,11 @@ li:hover {
 	justify-content: center;
 	align-items: center;
 }
-.modalWindow {
+#openModalButton {
+	border: none;
+	background: none;
+}
+.modal {
 	display: none;
 	position: fixed;
 	top: 0;
@@ -174,27 +183,19 @@ li:hover {
 	background: rgba(0, 0, 0, 0.3);
 	margin: 0 auto;
 }
-.modal {
+.modalGallery, .modalAddWork {
 	border: 1px black solid;
 	background-color: #FFFFFF;
 	border-radius: 10px;
 	width: 630px;
 	position: relative;
 }
-.modalee {
-	border: 1px black solid;
-	background-color: #FFFFFF;
-	border-radius: 10px;
-	width: 630px;
-	position: absolute;
-	left: 0;
-	right: 0;
-	margin: -60px auto;
-	text-align: center;
+.modalAddWork {
 	display: none;
+
 }
-.modal .fa-trash-can,
-.modal .fa-arrows-up-down-left-right {
+.modalGallery .fa-trash-can,
+.modalGallery .fa-arrows-up-down-left-right {
 	font-size: 10px;
 	background-color: #000000;
 	color: #FFFFFF;
@@ -209,16 +210,15 @@ li:hover {
 .fa-arrow-left {
 	font-size: 20px;
 	margin: 30px 0 0 30px;
-	cursor: pointer;
 }
 .fa-xmark {
 	font-size: 20px;
 	margin: 30px 35px;
 	position: absolute;
 	right: 0;
-	cursor: pointer;
 }
-.modal h3 {
+.modalGallery h3,
+.modalAddWork h3 {
 	font-size: 26px;
 	text-align: center;
 	margin-top: 60px;
@@ -232,7 +232,7 @@ hr {
 	flex-direction: column;
 	text-align: center;
 }
-#addWork {
+#addWorkButton {
 	font-family: 'Syne';
 	font-weight: 700;
 	color: white;
@@ -243,7 +243,7 @@ hr {
 	height: 36px;
 	border: none;
 }
-#deleteWork {
+#deleteWorkButton {
 	font-family: 'Syne';
 	font-weight: 700;
 	color: #D65353;
@@ -277,7 +277,7 @@ hr {
 	border-radius: 50px;
 	font-weight: 500;
 }
-#addImg {
+#addImgButton {
 	display: none;
 }
 .addImgContainer p {
@@ -296,13 +296,14 @@ hr {
 .info input, .info select {
 	height: 50px;
 }
-
-#submitImg {
+#submitWork {
 	width: 240px;
 	height: 36px;
 	border: none;
 	margin-top: 32px;
 	margin-bottom: 55px;
+	display: flex;
+	justify-content: center;
 }
 
 #filtersContainer {
