@@ -39,32 +39,31 @@
 		<section id="portfolio">
 			<div class="projects"><h2>Mes Projets</h2>
 				<div class="modifyWorks">
-					<i class="fa-regular fa-pen-to-square"></i>
-					<a href="#openModal" class="modifyLink">modifier</a>
+					<button id="openModalButton" class="cursorPointer"><i class="fa-regular fa-pen-to-square"></i>modifier</button>
 				</div>
 			</div>
-			<aside id="openModal" class="modalWindow" aria-hidden="true" role="dialog">
-				<div class="modal">
-					<i class="fa-solid fa-xmark"></i>
+			<aside id="modal" class="modal" aria-hidden="true" role="dialog">
+				<div class="modalGallery" aria-hidden="true">
+					<i class="fa-solid fa-xmark cursorPointer"></i>
 					<h3>Galerie photo</h3>
-					<div id="galleryPhoto" class="gallerPhoto"></div>
+					<div id="galleryPhoto" class="galleryPhoto"></div>
 					<hr>
 					<div class="flexColumn">
-						<input type="button" name="addWork" id="addWork" value="Ajouter une photo">
-						<input type="button" name="deleteWork" id="deleteWork" value="Supprimer la galerie">
+						<input type="button" name="addWorkButton" id="addWorkButton" class="cursorPointer" value="Ajouter une photo">
+						<input type="button" name="deleteWorkButton" id="deleteWorkButton" class="cursorPointer" value="Supprimer la galerie">
 					</div>
 				</div>
-				<div class="modalee">
+				<div class="modalAddWork" aria-hidden="true">
 					<span class="icons">
-						<i class="fa-solid fa-arrow-left"></i>
-						<i class="fa-solid fa-xmark"></i>
+						<i class="fa-solid fa-arrow-left cursorPointer"></i>
+						<i class="fa-solid fa-xmark cursorPointer"></i>
 					</span>
 					<h3>Ajout photo</h3>
 					<form action="#" method="post">
 					<div class="addImgContainer">
 						<i class="fa-solid fa-image"></i>
-						<label for="addImg"><span>+ Ajouter photo</span>
-							<input type="file" name="addImg" id="addImg" accept=".png, .jpg">
+						<label for="addImgButton" class="cursorPointer"><span>+ Ajouter photo</span>
+							<input type="file" name="addImgButton" id="addImgButton" accept=".png, .jpg">
 						</label>
 						<p>jpg, png: 4mo max</p>
 					</div>
@@ -76,7 +75,7 @@
 						</select>
 					</div>
 					<hr>
-					<input type="submit" name="submitImg" id="submitImg" value="Valider">
+					<input type="submit" name="submitWork" id="submitWork" class="cursorPointer" value="Valider">
 					</form>
 				</div>
 			</aside>
