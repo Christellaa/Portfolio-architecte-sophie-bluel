@@ -76,7 +76,6 @@ window.addEventListener("keydown", function (e) {
 async function getWorksArray() {
     const works = await getAllWorks();
     addWorksToModal(works);
-    console.log(works);
 }
 
 //add all works to the DOM
