@@ -101,6 +101,11 @@ const addWorksToModal = (works) => {
     trashContainer.appendChild(trash);
     figure.appendChild(caption);
     gallery.appendChild(figure);
+
+    trash.addEventListener("click", (e) => {
+        e.preventDefault();
+        deleteWork(work.id);
+    })
     });
     
 }
