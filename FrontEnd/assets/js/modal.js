@@ -1,4 +1,5 @@
 let currentModal = null;
+const token = sessionStorage.getItem("token");
 
 //prevent closing modal by clicking inside of it
 const stopPropagation = function (e) {
