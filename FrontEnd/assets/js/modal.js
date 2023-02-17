@@ -89,6 +89,7 @@ const addWorksToModal = (works) => {
     const trash = document.createElement("i");
     const caption = document.createElement("figcaption");
 
+    figure.id = work.id;
     img.src = work.imageUrl;
     trashContainer.classList.add("trashContainer", "cursorPointer");
     trash.classList.add("fa-regular", "fa-trash-can");
