@@ -38,7 +38,7 @@ async function sendForm(email, password) {
         //get token
         if (res.ok) {
             const userToken = await res.json();
-            token = userToken.token;
+            sessionStorage.setItem("token", userToken.token);
             window.location.href = "http://127.0.0.1:5500/FrontEnd/index.html";
         }
     } catch (err) {
