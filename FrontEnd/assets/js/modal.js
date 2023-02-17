@@ -1,5 +1,9 @@
 let currentModal = null;
 const token = sessionStorage.getItem("token");
+if(token !== "" && token !== null) {
+    let openModalButton = document.getElementById("openModalButton");
+    openModalButton.style.display = "block";
+}
 
 //prevent closing modal by clicking inside of it
 const stopPropagation = function (e) {
