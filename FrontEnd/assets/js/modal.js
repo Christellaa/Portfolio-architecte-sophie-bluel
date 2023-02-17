@@ -108,7 +108,26 @@ const addWorksToModal = (works) => {
         deleteWork(work.id);
     })
     });
-    
 }
+
+//delete a work by clicking on the trash icon
+async function deleteWork (workId) {
+    try {
+        const res = await fetch("http://localhost:5678/api/works/" + workId, {
+            method: "DELETE",
+            headers: {
+                "accept": "*/*",
+                "Authorization": `Bearer ${token}`
+            },
+        })
+        if (res.ok) {
+            document.getElementById(workId).remove();
+            document.getElementById("project-work-" + workId).remove();
+        }
+    }
+    catch (err) {
+        console.error(err);
+    };
+};
 
 getWorksArray();
