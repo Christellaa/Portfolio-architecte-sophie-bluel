@@ -90,7 +90,7 @@ function addWorksToModal(works) {
     const caption = document.createElement("figcaption");
 
     img.src = work.imageUrl;
-    trashContainer.classList.add("trashContainer");
+    trashContainer.classList.add("trashContainer", "cursorPointer");
     trash.classList.add("fa-regular", "fa-trash-can");
     caption.innerText = "éditer";
   
