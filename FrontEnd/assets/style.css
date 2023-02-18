@@ -173,6 +173,7 @@ li:hover {
 #openModalButton {
 	border: none;
 	background: none;
+	display: none;
 }
 .modal {
 	display: none;
