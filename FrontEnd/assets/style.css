@@ -218,8 +218,11 @@ li:hover {
 .modalAddWork h3 {
 	font-size: 26px;
 	text-align: center;
-	margin-top: 60px;
+	margin-top: 16px;
 	margin-bottom: 46px;
+}
+.modalGallery h3 {
+	margin-top: 60px;
 }
 .galleryContainer {
 	margin: 0 105px;
@@ -279,22 +282,24 @@ hr {
 	background: none;
 }
 
-.addImgContainer {
+.imgContainer {
 	background: #E8F1F6;
 	width: 65%;
+	height: 169px;
 	border-radius: 3px;
 	text-align: center;
-	padding-top: 28px;
-	padding-bottom: 19px;
 	margin: 0 auto 10px auto;
+	position: relative;
+	padding-bottom: 11px;
 }
-.addImgContainer .fa-image {
+.imgContainer .fa-image {
 	display: block;
 	color: #B9C5CC;
 	font-size: 60px;
+	padding-top: 25px;
 	margin-bottom: 20px;
 }
-.addImgContainer label {
+.imgContainer label {
 	display: inline-block;
 	font-family: 'Syne';
 	color: #306685;
@@ -306,10 +311,28 @@ hr {
 #addImgButton {
 	display: none;
 }
-.addImgContainer p {
+#imgPreview {
+	width: 129px;
+	height: 180px;
+	object-fit: cover;
+	position: absolute;
+	top: 0;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+}
+.imgContainer p {
 	margin-top: 7px;
 	font-size: 12px;
 }
+.imgErrorMessage {
+	color: #ff0000;
+	position: relative;
+	top: 5px;
+	font-size: 13px;
+}
+
 .info {
 	margin: 0 auto 47px auto;
 	width: 65%;
@@ -318,6 +341,16 @@ hr {
 	text-align: left;
 	margin-top: 20px;
 	margin-bottom: 10px;
+}
+.titleErrorMessage {
+	color: #ff0000;
+	font-size: 13px;
+	text-align: left;
+	margin-top: 5px;
+}
+.inputError {
+	background: #fff0f4;
+	border: 2px #ff0000 solid;
 }
 .info input, .info select {
 	height: 50px;
