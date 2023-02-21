@@ -59,23 +59,25 @@
 						<i class="fa-solid fa-xmark cursorPointer"></i>
 					</span>
 					<h3>Ajout photo</h3>
-					<form action="#" method="post">
-					<div class="addImgContainer">
-						<i class="fa-solid fa-image"></i>
-						<label for="addImgButton" class="cursorPointer"><span>+ Ajouter photo</span>
-							<input type="file" name="addImgButton" id="addImgButton" accept=".png, .jpg">
-						</label>
-						<p>jpg, png: 4mo max</p>
-					</div>
-					<div class="info flexColumn">
-						<label for="titleImg">Titre</label>
-						<input type="text" name="titleImg" id="titleImg">
-						<label for="categoryOption">Catégorie</label>
-						<select id="categoryOption">
-						</select>
-					</div>
-					<hr>
-					<input type="submit" name="submitWork" id="submitWork" class="cursorPointer" value="Valider">
+					<form action="#" method="post" enctype="multipart/form-data">
+						<div id="imgContainer" class="imgContainer">
+							<i class="fa-solid fa-image"></i>
+							<label id="inputContainer" for="addImgButton" class="cursorPointer"><span>+ Ajouter photo</span>
+								<input type="file" name="addImgButton" id="addImgButton" accept=".png, .jpg">
+							</label>
+							<p>jpg, png: 4mo max</p>
+						</div>
+						<div class="info flexColumn">
+							<div id="infoTitle" class="flexColumn">
+								<label for="titleImg">Titre</label>
+								<input type="text" name="titleImg" id="titleImg">
+							</div>
+							<label for="categoryOption">Catégorie</label>
+							<select name="categoryOption" id="categoryOption">
+							</select>
+						</div>
+						<hr>
+						<input type="submit" name="submitWork" id="submitWork" class="cursorPointer" value="Valider">
 					</form>
 				</div>
 			</aside>
