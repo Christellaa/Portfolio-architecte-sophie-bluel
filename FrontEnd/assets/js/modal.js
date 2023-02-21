@@ -196,4 +196,10 @@ workTitle.addEventListener("input", (e) => {
     }
 });
 
+//get all categories from the API
+async function getCategoriesArray() {
+    const categories = await getAllCategories();
+    addCategoriesToModal(categories);
+}
+
 getWorksArray();
