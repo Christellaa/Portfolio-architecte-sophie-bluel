@@ -244,4 +244,26 @@ submitNewWork.addEventListener("click", (event) => {
     }
 })
 
+//function sending the form to the API
+async function sendForm(image, title, filter) {
+    try {
+        const res = await fetch("http://localhost:5678/api/works", {
+            method: "POST",
+            headers: {
+                "accept": "*/*",
+                "Authorization": `Bearer ${token}`,
+                "Content-Type": "multipart/form-data"},
+            body: JSON.stringify({"image": image, "title": title, "category": filter})
+        })
+        if (res.ok) {
+            const newWork = await res.json();
+            addWork(newWork);
+            console.log(newWork, addWork(), category.id);
+        }
+    } catch (err) {
+    console.error(err);
+  };
+}
+
+
 getWorksArray();
