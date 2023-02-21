@@ -184,4 +184,16 @@ imgButton.addEventListener("change", (e) => {
     }
 });
 
+//validate title of new work
+workTitle.addEventListener("input", (e) => {
+    if (workTitle.value === "") {
+        titleErrorMessage.innerText = "Veuillez mettre un titre valide.";
+        workTitle.classList.add("inputError");
+    }
+    else {
+        titleErrorMessage.innerText = "";
+        workTitle.classList.remove("inputError");
+    }
+});
+
 getWorksArray();
