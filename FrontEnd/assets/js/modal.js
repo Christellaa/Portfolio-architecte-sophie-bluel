@@ -202,4 +202,29 @@ async function getCategoriesArray() {
     addCategoriesToModal(categories);
 }
 
+let selectedFilter = "";
+let currentFilter = 0;
+//add 3 out of 4 categories to the DOM
+const addCategoriesToModal = (categories) => {
+    const categoryOptionContainer = document.getElementById("categoryOption");
+
+    categories.forEach(function(category) {
+        const filters = document.createElement("option");
+
+        filters.value = category.name;
+        filters.id = category.id;
+        filters.innerText = category.name;
+        console.log(categoryOptionContainer, categoryOptionContainer.options);
+
+        for(let i = 0; i < categoryOptionContainer.length; i++) {
+            if ( categoryOptionContainer.options.value === categoryOptionContainer[i]) {
+                currentFilter = i;
+            }
+        }
+
+        categoryOptionContainer.appendChild(filters);
+        selectedFilter = categoryOptionContainer.options[categoryOptionContainer.selectedIndex].id;
+        console.log(selectedFilter);
+    });
+}
 getWorksArray();
