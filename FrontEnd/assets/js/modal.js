@@ -267,3 +267,4 @@ async function sendForm(image, title, filter) {
 
 
 getWorksArray();
+getCategoriesArray();
