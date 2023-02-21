@@ -129,4 +129,19 @@ async function deleteWork (workId) {
     };
 };
 
+//create form variables
+const inputContainer = document.getElementById("inputContainer");
+let imgButton = document.getElementById("addImgButton");
+let imgContainer = document.getElementById("imgContainer");
+const titleContainer = document.getElementById("infoTitle");
+let workTitle = document.getElementById("titleImg");
+let imgErrorMessage = document.createElement("span");
+let titleErrorMessage = document.createElement("span");
+
+imgErrorMessage.classList.add("imgErrorMessage");
+titleErrorMessage.classList.add("titleErrorMessage");
+
+imgContainer.appendChild(imgErrorMessage);
+titleContainer.appendChild(titleErrorMessage);
+
 getWorksArray();
