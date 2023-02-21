@@ -144,4 +144,44 @@ titleErrorMessage.classList.add("titleErrorMessage");
 imgContainer.appendChild(imgErrorMessage);
 titleContainer.appendChild(titleErrorMessage);
 
+//validate img of new work
+imgButton.addEventListener("change", (e) => {
+    let imgFile = document.createElement("img");
+    
+    imgFile.setAttribute("id", "imgPreview");
+
+    imgContainer.appendChild(imgFile);
+
+    let [file] = imgButton.files;
+
+    if (file) {
+        imgPreview.src = URL.createObjectURL(file);
+        inputContainer.style.display = "none";
+        imgFile.classList.add("cursorPointer");
+
+        imgFile.addEventListener("click", (e) => {
+            imgFile.remove();
+            imgButton.click();
+        })
+
+        let fileSize = file.size;
+        //1MB = 1024, 4MB = 4096 * 1024
+        const maxFileSize = 4096 * 1024;
+        console.log("max", maxFileSize, "actual", fileSize);
+        
+        if (fileSize > maxFileSize) {
+            imgFile.remove();
+            inputContainer.style.display = "inline-block";
+            imgErrorMessage.innerText = "La taille de l'image est trop grande";
+        }
+        else {
+            imgErrorMessage.innerText = "";
+        }
+    }
+    else if (imgFile.src === "") {
+        imgFile.remove();
+        inputContainer.style.display = "inline-block";
+    }
+});
+
 getWorksArray();
