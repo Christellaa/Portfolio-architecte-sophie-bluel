@@ -133,14 +133,17 @@ async function deleteWork (workId) {
 const inputContainer = document.getElementById("inputContainer");
 let imgButton = document.getElementById("addImgButton");
 let imgContainer = document.getElementById("imgContainer");
+let imgFile = document.createElement("img");
 const titleContainer = document.getElementById("infoTitle");
 let workTitle = document.getElementById("titleImg");
 let imgErrorMessage = document.createElement("span");
 let titleErrorMessage = document.createElement("span");
 
+imgFile.setAttribute("id", "imgPreview");
 imgErrorMessage.classList.add("imgErrorMessage");
 titleErrorMessage.classList.add("titleErrorMessage");
 
+imgContainer.appendChild(imgFile);
 imgContainer.appendChild(imgErrorMessage);
 titleContainer.appendChild(titleErrorMessage);
 
