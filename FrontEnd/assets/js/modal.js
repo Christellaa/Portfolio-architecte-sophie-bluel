@@ -177,6 +177,7 @@ imgButton.addEventListener("change", (e) => {
         const maxFileSize = 4096 * 1024;
         console.log("max", maxFileSize, "actual", fileSize);
         
+        //restrict img size
         if (fileSize > maxFileSize) {
             imgFile.remove();
             inputContainer.style.display = "inline-block";
@@ -186,6 +187,7 @@ imgButton.addEventListener("change", (e) => {
             imgErrorMessage.innerText = "";
         }
     }
+    //do not allow empty img src
     else if (imgFile.src === "") {
         imgFile.remove();
         inputContainer.style.display = "inline-block";
