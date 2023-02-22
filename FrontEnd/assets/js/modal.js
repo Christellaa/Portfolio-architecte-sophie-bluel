@@ -248,6 +248,11 @@ submitNewWork.addEventListener("click", (event) => {
     if((imgButton.files.length === 0) || (fileSize > maxFileSize) || (workTitle.value === "")) {
         alert("Veuillez rajouter une image et/ou un titre valide");
     }
+    else {
+        let filterContainer = document.getElementById("categoryOption");
+        const selectedIndex = filterContainer.options.selectedIndex;
+        let selectedIdOption = filterContainer.options[selectedIndex].id;
+
     }
 })
 
