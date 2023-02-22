@@ -147,6 +147,11 @@ imgContainer.appendChild(imgFile);
 imgContainer.appendChild(imgErrorMessage);
 titleContainer.appendChild(titleErrorMessage);
 
+//add new img by clicking on img
+imgFile.addEventListener("click", (e) => {
+    imgButton.click();
+})
+
 //validate img of new work
 imgButton.addEventListener("change", (e) => {
     let imgFile = document.createElement("img");
