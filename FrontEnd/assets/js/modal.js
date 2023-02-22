@@ -271,7 +271,7 @@ async function sendForm(formData) {
                 "accept": "*/*",
                 "Authorization": `Bearer ${token}`
             },
-            body: JSON.stringify({"image": image, "title": title, "category": filter})
+            body: formData
         })
         if (res.ok) {
             const newWork = await res.json();
