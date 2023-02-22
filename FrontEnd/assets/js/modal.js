@@ -263,7 +263,7 @@ submitNewWork.addEventListener("click", (event) => {
 })
 
 //function sending the form to the API
-async function sendForm(image, title, filter) {
+async function sendForm(formData) {
     try {
         const res = await fetch("http://localhost:5678/api/works", {
             method: "POST",
