@@ -269,8 +269,8 @@ async function sendForm(formData) {
             method: "POST",
             headers: {
                 "accept": "*/*",
-                "Authorization": `Bearer ${token}`,
-                "Content-Type": "multipart/form-data"},
+                "Authorization": `Bearer ${token}`
+            },
             body: JSON.stringify({"image": image, "title": title, "category": filter})
         })
         if (res.ok) {
