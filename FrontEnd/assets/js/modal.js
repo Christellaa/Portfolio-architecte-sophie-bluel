@@ -241,16 +241,13 @@ const addCategoriesToModal = (categories) => {
 const submitNewWork = document.getElementById("submitWork");
 submitNewWork.addEventListener("click", (event) => {
     event.preventDefault();
-    if((imgButton.files.length === 0) || (workTitle.value === "")) {
-        alert("Veuillez rajouter une image et/ou un titre");
-        /*if (imgButton.files.length === 0) {
-            console.log("pas d'image");
-            alert("Veuillez rajouter une image");
-        }*/
-    } else {
-        console.log('send form');
-        //sendForm(imgButton.value, workTitle.value, selectedFilter);
-        console.log(imgButton.value, workTitle.value, selectedFilter);
+
+    let fileSize = imgButton.files[0].size;
+    const maxFileSize = 4096 * 1024;
+    
+    if((imgButton.files.length === 0) || (fileSize > maxFileSize) || (workTitle.value === "")) {
+        alert("Veuillez rajouter une image et/ou un titre valide");
+    }
     }
 })
 
