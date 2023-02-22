@@ -154,11 +154,7 @@ imgFile.addEventListener("click", (e) => {
 
 //validate img of new work
 imgButton.addEventListener("change", (e) => {
-    let imgFile = document.createElement("img");
-    
-    imgFile.setAttribute("id", "imgPreview");
-
-    imgContainer.appendChild(imgFile);
+    imgFile.style.visibility = "visible";
 
     let [file] = imgButton.files;
 
@@ -167,15 +163,9 @@ imgButton.addEventListener("change", (e) => {
         inputContainer.style.display = "none";
         imgFile.classList.add("cursorPointer");
 
-        imgFile.addEventListener("click", (e) => {
-            imgFile.remove();
-            imgButton.click();
-        })
-
         let fileSize = file.size;
         //1MB = 1024, 4MB = 4096 * 1024
         const maxFileSize = 4096 * 1024;
-        console.log("max", maxFileSize, "actual", fileSize);
         
         //restrict img size
         if (fileSize > maxFileSize) {
@@ -212,8 +202,6 @@ async function getCategoriesArray() {
     addCategoriesToModal(categories);
 }
 
-let selectedFilter = "";
-let currentFilter = 0;
 //add 3 out of 4 categories to the DOM
 const addCategoriesToModal = (categories) => {
     const categoryOptionContainer = document.getElementById("categoryOption");
@@ -224,19 +212,11 @@ const addCategoriesToModal = (categories) => {
         filters.value = category.name;
         filters.id = category.id;
         filters.innerText = category.name;
-        console.log(categoryOptionContainer, categoryOptionContainer.options);
-
-        for(let i = 0; i < categoryOptionContainer.length; i++) {
-            if ( categoryOptionContainer.options.value === categoryOptionContainer[i]) {
-                currentFilter = i;
-            }
-        }
 
         categoryOptionContainer.appendChild(filters);
-        selectedFilter = categoryOptionContainer.options[categoryOptionContainer.selectedIndex].id;
-        console.log(selectedFilter);
     });
 }
+
 //validate the form
 const submitNewWork = document.getElementById("submitWork");
 submitNewWork.addEventListener("click", (event) => {
@@ -276,7 +256,6 @@ async function sendForm(formData) {
         if (res.ok) {
             const newWork = await res.json();
             addWork(newWork);
-            console.log(newWork, addWork(), category.id);
         }
     } catch (err) {
     console.error(err);
