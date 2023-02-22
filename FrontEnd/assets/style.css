@@ -321,6 +321,7 @@ hr {
 	margin-right: auto;
 	left: 0;
 	right: 0;
+	visibility: hidden;
 }
 .imgContainer p {
 	margin-top: 7px;
