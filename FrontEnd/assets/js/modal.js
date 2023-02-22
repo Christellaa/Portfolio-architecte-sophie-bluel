@@ -253,6 +253,11 @@ submitNewWork.addEventListener("click", (event) => {
         const selectedIndex = filterContainer.options.selectedIndex;
         let selectedIdOption = filterContainer.options[selectedIndex].id;
 
+        const formData = new FormData();
+        formData.append("image", imgButton.files[0]);
+        formData.append("title", workTitle.value);
+        formData.append("category", selectedIdOption);
+
     }
 })
 
