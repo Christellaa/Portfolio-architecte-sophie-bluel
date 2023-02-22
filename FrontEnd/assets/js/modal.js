@@ -258,6 +258,7 @@ submitNewWork.addEventListener("click", (event) => {
         formData.append("title", workTitle.value);
         formData.append("category", selectedIdOption);
 
+        sendForm(formData);
     }
 })
 
