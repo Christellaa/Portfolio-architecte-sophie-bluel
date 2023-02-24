@@ -81,6 +81,9 @@ async function getWorksArray() {
 //add all works to the DOM
 const addWorksToModal = (works) => {
     works.forEach(function(work) {
+    addWorkToModal(work);
+    });
+}
 
 function addWorkToModal(work) {
     const gallery = document.getElementById("galleryContainer");
