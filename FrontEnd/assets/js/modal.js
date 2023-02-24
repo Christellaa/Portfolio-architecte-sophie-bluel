@@ -81,6 +81,8 @@ async function getWorksArray() {
 //add all works to the DOM
 const addWorksToModal = (works) => {
     works.forEach(function(work) {
+
+function addWorkToModal(work) {
     const gallery = document.getElementById("galleryContainer");
     const figure = document.createElement("figure");
     const img = document.createElement("img");
@@ -106,7 +108,6 @@ const addWorksToModal = (works) => {
         e.preventDefault();
         deleteWork(work.id);
     })
-    });
 }
 
 //delete a work by clicking on the trash icon
