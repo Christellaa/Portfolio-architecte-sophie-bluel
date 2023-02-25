@@ -25,8 +25,6 @@ function validateForm(email, password) {
     });
 }
 
-let token = "";
-
 //function sending the form to the API
 async function sendForm(email, password) {
     try {
