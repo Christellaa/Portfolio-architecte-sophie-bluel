@@ -10,7 +10,7 @@ if(token !== "" && token !== null) {
 //prevent closing modal by clicking inside of it
 const stopPropagation = function (e) {
     e.stopPropagation();
-}
+};
 
 //open modalGallery
 const openModal = function (e) {
@@ -25,7 +25,7 @@ const openModal = function (e) {
     currentModal.addEventListener("click", closeModal);
     currentModal.querySelector(".fa-xmark").addEventListener("click", closeModal);
     currentModal.querySelector(".modalGallery").addEventListener("click", stopPropagation);
-}
+};
 
 const openModalButton = document.querySelector("#openModalButton");
 openModalButton.addEventListener("click", openModal);
@@ -39,7 +39,7 @@ const addPicture = function (e) {
     modalAddWork.style.display = "block";
     modalAddWork.querySelector(".fa-xmark").addEventListener("click", closeModal);
     modalAddWork.addEventListener("click", stopPropagation);
-}
+};
 
 const addWorkButton = document.querySelector("#addWorkButton");
 addWorkButton.addEventListener("click", addPicture);
@@ -49,7 +49,7 @@ const goBackToModalGallery = function (e) {
     e.preventDefault();
     document.querySelector(".modalGallery").style.display = "block";
     document.querySelector(".modalAddWork").style.display = "none";
-}
+};
 
 const backToModalGallery = document.querySelector(".fa-arrow-left");
 backToModalGallery.addEventListener("click", goBackToModalGallery);
@@ -65,14 +65,14 @@ const closeModal = function (e) {
     currentModal.querySelector(".modalGallery").removeEventListener("click", stopPropagation);
     currentModal.querySelector(".modalAddWork").removeEventListener("click", stopPropagation);
     currentModal = null;
-}
+};
 
 //close modal by escape button
 window.addEventListener("keydown", function (e) {
     if (e.key === "Escape" || e.key === "Esc") {
         closeModal(e);
     }
-})
+});
 
 //get all works from the API
 async function getWorksArray() {
@@ -85,7 +85,7 @@ const addWorksToModal = (works) => {
     works.forEach(function(work) {
     addWorkToModal(work);
     });
-}
+};
 
 function addWorkToModal(work) {
     const gallery = document.getElementById("galleryContainer");
@@ -112,7 +112,7 @@ function addWorkToModal(work) {
     trash.addEventListener("click", (e) => {
         e.preventDefault();
         deleteWork(work.id);
-    })
+    });
 }
 
 //delete a work by clicking on the trash icon
@@ -124,7 +124,7 @@ async function deleteWork (workId) {
                 "accept": "*/*",
                 "Authorization": `Bearer ${token}`
             },
-        })
+        });
         if (res.ok) {
             document.getElementById(workId).remove();
             document.getElementById("project-work-" + workId).remove();
@@ -132,8 +132,8 @@ async function deleteWork (workId) {
     }
     catch (err) {
         console.error(err);
-    };
-};
+    }
+}
 
 //create form variables
 const inputContainer = document.getElementById("inputContainer");
@@ -156,7 +156,7 @@ titleContainer.appendChild(titleErrorMessage);
 //add new img by clicking on img
 imgFile.addEventListener("click", (e) => {
     imgButton.click();
-})
+});
 
 //validate img of new work
 imgButton.addEventListener("change", (e) => {
@@ -221,7 +221,7 @@ const addCategoriesToModal = (categories) => {
 
         categoryOptionContainer.appendChild(filters);
     });
-}
+};
 
 //validate the form
 const submitNewWork = document.getElementById("submitWork");
@@ -246,7 +246,7 @@ submitNewWork.addEventListener("click", (event) => {
 
         sendForm(formData);
     }
-})
+});
 
 //function sending the form to the API
 async function sendForm(formData) {
@@ -258,7 +258,7 @@ async function sendForm(formData) {
                 "Authorization": `Bearer ${token}`
             },
             body: formData
-        })
+        });
         if (res.ok) {
             const newWork = await res.json();
             //reset form
@@ -269,7 +269,7 @@ async function sendForm(formData) {
         }
     } catch (err) {
     console.error(err);
-  };
+  }
 }
 
 function clearForm() {

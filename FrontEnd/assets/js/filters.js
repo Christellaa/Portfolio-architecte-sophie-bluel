@@ -11,7 +11,7 @@ async function getAllCategories() {
         }
     } catch (err) {
         console.error(err);
-    };
+    }
 }
 
 //création des catégories

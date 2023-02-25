@@ -41,7 +41,7 @@ async function sendForm(email, password) {
             method: "POST",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify({"email": email, "password": password})
-        })
+        });
         //get token
         if (res.ok) {
             const userToken = await res.json();
@@ -51,7 +51,7 @@ async function sendForm(email, password) {
         }
     } catch (err) {
     console.error(err);
-  };
+  }
 }
 
 //send form to the API by clicking on the button
@@ -63,4 +63,4 @@ button.addEventListener("click", (event) => {
     } else {
         sendForm(email.value, password.value);
     }
-})
+});

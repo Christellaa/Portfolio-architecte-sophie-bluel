@@ -7,7 +7,7 @@ async function getAllWorks() {
       }
     } catch (err) {
       console.error(err);
-    };
+    }
 }
 
 function addWorksToDocument(works) {

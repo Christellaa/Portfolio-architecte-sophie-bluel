@@ -8,5 +8,5 @@ if(tokenToDelete !== "" && tokenToDelete !== null) {
         sessionStorage.removeItem("token");
         window.location.href = "index.html";
         logOut.href ="index.html";
-    })
+    });
 }
