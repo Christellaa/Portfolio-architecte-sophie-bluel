@@ -13,27 +13,26 @@ emailContainer.appendChild(emailErrorMessage);
 passwordContainer.appendChild(passwordErrorMessage);
 
 //validate Email and Password
-function validateForm(email, password) {
-    email.addEventListener("input", (event) => {
-        if(!emailRegex.test(email.value)) {
-            email.setCustomValidity("Veuillez mettre une adresse email valide.");
-            return false;
-        } else {
-            email.setCustomValidity("");
-        }
-    });
+email.addEventListener("input", (event) => {
+    if(!emailRegex.test(email.value)) {
+        emailErrorMessage.innerText = "Veuillez mettre une adresse email valide.";
+        //return false;
+    } else {
+        emailErrorMessage.innerText = "";
+    }
+});
+
+password.addEventListener("input", (event) => {
     
-    password.addEventListener("input", (event) => {
-        
-        if(password.value.length < 5) {
-            password.setCustomValidity("Le mot de passe doit contenir au minimum 5 caractères");
-            return false;
-        }
-        else {
-            password.setCustomValidity("");
-        }
-    });
-}
+    if(password.value.length < 5) {
+        passwordErrorMessage.innerText = "Le mot de passe doit contenir au minimum 5 caractères.";
+        //return false;
+    }
+    else {
+        passwordErrorMessage.innerText = "";
+    }
+});
+
 
 //function sending the form to the API
 async function sendForm(email, password) {
