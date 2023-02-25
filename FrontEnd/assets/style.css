@@ -50,6 +50,10 @@ table {
 	border-spacing: 0;
 }
 /** end reset css**/
+html, body, .container {
+	height: 100%;
+}
+
 body {
 	font-family: 'Work Sans' ;
 	font-size: 14px;
@@ -58,9 +62,6 @@ body {
 .container {
 	max-width: 1140px;
 	margin: 0 auto;
-}
-.footerBottom {
-	height: 79vh;
 }
 header {
 	display: flex;
