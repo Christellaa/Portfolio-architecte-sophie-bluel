@@ -227,12 +227,9 @@ li:hover {
 .galleryContainer {
 	margin: 0 105px;
 	display: grid;
-	grid-template-columns: repeat(5, 1fr);
-	grid-column-gap: 7px;
-	grid-row-gap: 10px;
-}
-.galleryContainer img {
-	width: 100%;
+	justify-content:center;
+	grid-template-columns: repeat(auto-fit, minmax(75px, max-content));
+	grid-gap: 7px 10px;
 }
 .galleryContainer figure {
 	position: relative;
