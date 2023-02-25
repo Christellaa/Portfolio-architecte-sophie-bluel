@@ -266,6 +266,13 @@ async function sendForm(formData) {
   };
 }
 
+function clearForm() {
+    let formAddWork = document.getElementById("formAddWork");
+    formAddWork.reset();
+    imgFile.src = "";
+    imgFile.style.visibility = "hidden";
+    inputContainer.style.display = "inline-block";
+}
 
 getWorksArray();
 getCategoriesArray();
