@@ -259,6 +259,9 @@ async function sendForm(formData) {
         })
         if (res.ok) {
             const newWork = await res.json();
+            clearForm();
+            //add work to modal and gallery
+            addWorkToModal(newWork);
             addWork(newWork);
         }
     } catch (err) {
