@@ -22,6 +22,7 @@ function addWork(work) {
   const img = document.createElement("img");
   const caption = document.createElement("figcaption");
 
+  figure.id = "project-work-" + work.id;
   img.src = work.imageUrl;
   caption.innerText = work.title;
 

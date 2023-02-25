@@ -25,8 +25,6 @@ function validateForm(email, password) {
     });
 }
 
-let token = "";
-
 //function sending the form to the API
 async function sendForm(email, password) {
     try {
@@ -38,8 +36,9 @@ async function sendForm(email, password) {
         //get token
         if (res.ok) {
             const userToken = await res.json();
-            token = userToken.token;
-            window.location.href = "http://127.0.0.1:5500/FrontEnd/index.html";
+            sessionStorage.setItem("token", userToken.token);
+            window.location.href = "index.html";
+            console.log(userToken);
         }
     } catch (err) {
     console.error(err);

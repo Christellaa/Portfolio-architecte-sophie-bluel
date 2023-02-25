@@ -19,7 +19,7 @@
 			<ul class="navLinks">
 				<li><a href="index.html">projets</a></li>
 				<li>contact</li>
-				<li><a href="login.html">login</a></li>
+				<li><a id="login-logout" href="login.html">login</a></li>
 				<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
 			</ul>
 		</nav>
@@ -39,44 +39,45 @@
 		<section id="portfolio">
 			<div class="projects"><h2>Mes Projets</h2>
 				<div class="modifyWorks">
-					<i class="fa-regular fa-pen-to-square"></i>
-					<a href=".modale" class="modifyLink">modifier</a>
+					<button id="openModalButton" class="cursorPointer"><i class="fa-regular fa-pen-to-square"></i>modifier</button>
 				</div>
 			</div>
-			<aside>
-				<div class="modale" >
-					<i class="fa-solid fa-xmark"></i>
+			<aside id="modal" class="modal" aria-hidden="true" role="dialog">
+				<div class="modalGallery" aria-hidden="true">
+					<i class="fa-solid fa-xmark cursorPointer"></i>
 					<h3>Galerie photo</h3>
-					<div id="galleryPhoto" class="gallerPhoto"></div>
+					<div id="galleryContainer" class="galleryContainer"></div>
 					<hr>
 					<div class="flexColumn">
-						<input type="button" name="addWork" id="addWork" value="Ajouter une photo">
-						<input type="button" name="deleteWork" id="deleteWork" value="Supprimer la galerie">
+						<input type="button" name="addWorkButton" id="addWorkButton" class="cursorPointer" value="Ajouter une photo">
+						<input type="button" name="deleteWorkButton" id="deleteWorkButton" class="cursorPointer" value="Supprimer la galerie">
 					</div>
 				</div>
-				<div class="modalee">
+				<div class="modalAddWork" aria-hidden="true">
 					<span class="icons">
-						<i class="fa-solid fa-arrow-left"></i>
-						<i class="fa-solid fa-xmark"></i>
+						<i class="fa-solid fa-arrow-left cursorPointer"></i>
+						<i class="fa-solid fa-xmark cursorPointer"></i>
 					</span>
 					<h3>Ajout photo</h3>
-					<form action="#" method="post">
-					<div class="addImgContainer">
-						<i class="fa-solid fa-image"></i>
-						<label for="addImg"><span>+ Ajouter photo</span>
-							<input type="file" name="addImg" id="addImg" accept=".png, .jpg">
-						</label>
-						<p>jpg, png: 4mo max</p>
-					</div>
-					<div class="info flexColumn">
-						<label for="titleImg">Titre</label>
-						<input type="text" name="titleImg" id="titleImg">
-						<label for="categoryOption">Catégorie</label>
-						<select id="categoryOption">
-						</select>
-					</div>
-					<hr>
-					<input type="submit" name="submitImg" id="submitImg" value="Valider">
+					<form id="formAddWork" action="#" method="post" enctype="multipart/form-data">
+						<div id="imgContainer" class="imgContainer">
+							<i class="fa-solid fa-image"></i>
+							<label id="inputContainer" for="addImgButton" class="cursorPointer"><span>+ Ajouter photo</span>
+								<input type="file" name="addImgButton" id="addImgButton" accept=".png, .jpg">
+							</label>
+							<p>jpg, png: 4mo max</p>
+						</div>
+						<div class="info flexColumn">
+							<div id="infoTitle" class="flexColumn">
+								<label for="titleImg">Titre</label>
+								<input type="text" name="titleImg" id="titleImg">
+							</div>
+							<label for="categoryOption">Catégorie</label>
+							<select name="categoryOption" id="categoryOption">
+							</select>
+						</div>
+						<hr>
+						<input type="submit" name="submitWork" id="submitWork" class="cursorPointer" value="Valider">
 					</form>
 				</div>
 			</aside>
@@ -110,5 +111,7 @@
 <script src="./assets/js/currentPage.js"></script>
 <script src="./assets/js/works.js"></script>
 <script src="./assets/js/filters.js"></script>
+<script src="./assets/js/logout.js"></script>
+<script src="./assets/js/modal.js"></script>
 </body>
 </html>
