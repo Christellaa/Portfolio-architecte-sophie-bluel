@@ -237,6 +237,9 @@ li:hover {
 .galleryContainer figure {
 	position: relative;
 }
+.galleryContainer img {
+	width: 100%;
+}
 .trashContainer {
 	z-index: 1;
 	position: absolute;
