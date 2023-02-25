@@ -1,5 +1,7 @@
 let currentModal = null;
+
 const token = sessionStorage.getItem("token");
+
 if(token !== "" && token !== null) {
     let openModalButton = document.getElementById("openModalButton");
     openModalButton.style.display = "block";
@@ -259,6 +261,7 @@ async function sendForm(formData) {
         })
         if (res.ok) {
             const newWork = await res.json();
+            //reset form
             clearForm();
             //add work to modal and gallery
             addWorkToModal(newWork);
