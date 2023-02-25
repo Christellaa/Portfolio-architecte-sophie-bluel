@@ -1,6 +1,16 @@
 const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
 let email = document.getElementById("email");
 let password = document.getElementById("password");
+let emailErrorMessage = document.createElement("span");
+let passwordErrorMessage = document.createElement("span");
+let emailContainer = document.getElementById("emailContainer");
+let passwordContainer = document.getElementById("passwordContainer");
+
+emailErrorMessage.classList.add("titleErrorMessage");
+passwordErrorMessage.classList.add("titleErrorMessage");
+
+emailContainer.appendChild(emailErrorMessage);
+passwordContainer.appendChild(passwordErrorMessage);
 
 //validate Email and Password
 function validateForm(email, password) {
