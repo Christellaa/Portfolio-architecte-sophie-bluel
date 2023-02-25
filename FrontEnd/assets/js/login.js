@@ -58,7 +58,7 @@ async function sendForm(email, password) {
 const button = document.getElementById("sendForm");
 button.addEventListener("click", (event) => {
     event.preventDefault();
-    if((email.value == "") || (password.value == "")) {
+    if((email.value == "") || (password.value == "") || password.value.length < 5) {
         alert("Adresse email ou mot de passe invalide");
     } else {
         sendForm(email.value, password.value);
