@@ -149,6 +149,9 @@ li:hover {
 	margin-bottom: 1em;
 }
 
+#portfolio {
+	width: 90%;
+	margin: 0 auto;
 #portfolio h2 {
 	text-align: center;
 }
