@@ -48,9 +48,12 @@ async function sendForm(email, password) {
             sessionStorage.setItem("token", userToken.token);
             window.location.href = "index.html";
             console.log(userToken);
+        } else {
+            alert("Veuillez mettre un email et/ou mot de passe valide");
         }
-    } catch (err) {
-    console.error(err);
+    }
+    catch (err) {
+        console.error(err);
   }
 }
 
