@@ -16,17 +16,14 @@ passwordContainer.appendChild(passwordErrorMessage);
 email.addEventListener("input", (event) => {
     if(!emailRegex.test(email.value)) {
         emailErrorMessage.innerText = "Veuillez mettre une adresse email valide.";
-        //return false;
     } else {
         emailErrorMessage.innerText = "";
     }
 });
 
 password.addEventListener("input", (event) => {
-    
     if(password.value.length < 5) {
         passwordErrorMessage.innerText = "Le mot de passe doit contenir au minimum 5 caractères.";
-        //return false;
     }
     else {
         passwordErrorMessage.innerText = "";
