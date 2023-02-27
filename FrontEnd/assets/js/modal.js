@@ -75,7 +75,7 @@ window.addEventListener("keydown", function (e) {
 });
 
 //get all works from the API
-async function getWorksArray() {
+async function getWorksArrays() {
     const works = await getAllWorks();
     addWorksToModal(works);
 }
@@ -203,7 +203,7 @@ workTitle.addEventListener("input", (e) => {
 });
 
 //get all categories from the API
-async function getCategoriesArray() {
+async function getCategoriesArrays() {
     const categories = await getAllCategories();
     addCategoriesToModal(categories);
 }
@@ -280,5 +280,5 @@ function clearForm() {
     inputContainer.style.display = "inline-block";
 }
 
-getWorksArray();
-getCategoriesArray();
+getWorksArrays();
+getCategoriesArrays();
