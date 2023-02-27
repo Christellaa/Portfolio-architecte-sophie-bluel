@@ -1,7 +1,3 @@
-async function getWorksArray() {
-    const works = await getAllWorks();
-}
-
 async function getAllCategories() {
     try {
         const res = await fetch("http://localhost:5678/api/categories");
@@ -41,9 +37,9 @@ function addCategories(categories) {
 //filtre actif
 function filterActive(element) {
     element.addEventListener("click", () => {
-        let remover = document.getElementsByClassName("filterActive");
-        if (remover.length !== 0) {
-            Array.from(remover).forEach((element) => {
+        let activeFilter = document.getElementsByClassName("filterActive");
+        if (activeFilter.length !== 0) {
+            Array.from(activeFilter).forEach((element) => {
             element.classList.remove("filterActive");
             });
         }
@@ -57,6 +53,6 @@ async function showCategories() {
     addCategories(allCategories);
 }
 
-getWorksArray();
+getAllWorks();
 getAllCategories();
 showCategories();
